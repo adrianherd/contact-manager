@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { SideNavComponent } from './side-nav.component';
 
 @NgModule({
@@ -11,6 +12,7 @@ import { SideNavComponent } from './side-nav.component';
   ],
   imports: [
     CommonModule,
+    FontAwesomeModule,
   ],
 })
 export class SideNavModule { }
