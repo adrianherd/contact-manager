@@ -1,1 +1,13 @@
-<p>side-nav works!</p>
+<div class="font-italic font-weight-bold">
+  Spectrum >>>
+</div>
+<ul class="nav nav-pills flex-column">
+  <li *ngFor="let option of options; let i = index" class="nav-item card">
+    <div class="nav-link" (click)="toggleDropdown(i)">{{option.name}}</div>
+    <ul class="nav nav-pills flex-column" [class.d-none]="!option.isExpanded">
+      <li *ngFor="let sub of option.subOptions" class="nav-item card pl-3">
+        <div class="nav-link">{{sub}}</div>
+      </li>
+    </ul>
+  </li>
+</ul>
