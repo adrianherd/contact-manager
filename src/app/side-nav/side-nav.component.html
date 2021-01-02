@@ -19,11 +19,39 @@
 </div>
 <div [class.d-md-flex]="largeMenuCondensed">
   <ul class="nav flex-column text-white"
-      [class.menu-hidden]="!smallMenuExpanded" [class.condense]="largeMenuCondensed">
+      [class.menu-hidden]="!smallMenuExpanded">
+    <div class="d-flex justify-content-between text-center" [class.flex-md-column]="largeMenuCondensed">
+      <div class="flex-fill">
+        <li class="nav-item card cursor-pointer">
+          <div class="nav-link d-flex flex-column">
+            <fa-icon [icon]="dashIcon" [fixedWidth]="true" size="lg"></fa-icon>
+            <div class="icon-subtext" [class.d-md-none]="largeMenuCondensed">Dashboard</div>
+          </div>
+        </li>
+      </div>
+      <div class="flex-fill">
+        <li class="nav-item card cursor-pointer">
+          <div class="nav-link d-flex flex-column">
+            <fa-icon [icon]="clientIcon" [fixedWidth]="true" size="lg"></fa-icon>
+            <div class="icon-subtext" [class.d-md-none]="largeMenuCondensed">Client Site</div>
+          </div>
+        </li>
+      </div>
+      <div class="flex-fill">
+        <li class="nav-item card cursor-pointer">
+          <div class="nav-link d-flex flex-column">
+            <fa-icon [icon]="feedbackIcon" [fixedWidth]="true" size="lg"></fa-icon>
+            <div class="icon-subtext" [class.d-md-none]="largeMenuCondensed">Feedback</div>
+          </div>
+        </li>
+      </div>
+    </div>
     <li *ngFor="let option of options; let i = index"
         class="nav-item card cursor-pointer">
       <div class="nav-link" [class.pl-2]="!largeMenuCondensed" (click)="toggleDropdown(i)">
-        <div class="d-flex justify-content-between">
+        <div class="d-flex justify-content-between-max-sm"
+             [class.justify-content-between]="!largeMenuCondensed"
+             [class.justify-content-md-center]="largeMenuCondensed">
           <div>
             <fa-icon *ngIf="option.faIcon"
                      [icon]="option.faIcon"

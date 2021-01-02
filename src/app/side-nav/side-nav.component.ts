@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Icon } from '@fortawesome/fontawesome-svg-core';
 import {
   IconDefinition,
   faCog,
@@ -16,6 +15,9 @@ import {
   faBars,
   faCaretSquareLeft,
   faCaretSquareRight,
+  faTachometerAlt,
+  faDesktop,
+  faComment,
 } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
@@ -29,6 +31,9 @@ export class SideNavComponent implements OnInit {
   barsIcon: IconDefinition = faBars;
   leftIcon: IconDefinition = faCaretSquareLeft;
   rightIcon: IconDefinition = faCaretSquareRight;
+  dashIcon: IconDefinition = faTachometerAlt;
+  clientIcon: IconDefinition = faDesktop;
+  feedbackIcon: IconDefinition = faComment;
 
   smallMenuExpanded = false;
   largeMenuCondensed = false;
@@ -84,6 +89,6 @@ export class SideNavComponent implements OnInit {
 type NavItem = {
   name: string;
   faIcon?: IconDefinition;
-  isExpanded: boolean;
-  subOptions: string[];
+  isExpanded?: boolean;
+  subOptions?: string[];
 };
