@@ -61,3 +61,10 @@ div.nav-link:hover {
 .icon-subtext {
   font-size: .75rem;
 }
+
+div[tabindex='0']:focus,
+span[tabindex='0']:focus,
+li[tabindex='0']:focus {
+  outline: orange solid 4px;
+  outline-offset: -4px;
+}

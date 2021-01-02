@@ -1,3 +1,4 @@
+<!-- Spectrum Brand Area -->
 <div class="d-flex py-2 pl-2 nav-brand-color text-white justify-content-between-max-sm"
      [class.justify-content-md-between]="!largeMenuCondensed">
   <h3 class="font-italic font-weight-bold nav-brand-letter m-0">
@@ -6,24 +7,40 @@
   <div class="mr-2 my-auto d-md-none">
     <span class="border border-white rounded py-1 px-2 cursor-pointer"
           [class.hamburger-expanded]="smallMenuExpanded"
-          (click)="smallMenuExpanded = !smallMenuExpanded">
+          (click)="smallMenuExpanded = !smallMenuExpanded"
+          (select)="smallMenuExpanded = !smallMenuExpanded"
+          tabindex="0"
+          role="button"
+          appAriaSelect
+          (ariaSelect)="smallMenuExpanded = !smallMenuExpanded">
       <fa-icon [icon]="barsIcon"></fa-icon>
     </span>
   </div>
   <div class="mr-2 my-auto d-none d-md-block">
     <span class="py-1 px-2 cursor-pointer"
-          (click)="largeMenuCondensed = !largeMenuCondensed">
+          (click)="largeMenuCondensed = !largeMenuCondensed"
+          tabindex="0"
+          role="button"
+          appAriaSelect
+          (ariaSelect)="largeMenuCondensed = !largeMenuCondensed">
       <fa-icon [icon]="largeMenuCondensed ? rightIcon : leftIcon" size="2x"></fa-icon>
     </span>
   </div>
 </div>
+
+<!-- Navigation Bar : Accessible, Mobile, Responsive -->
 <div [class.d-md-flex]="largeMenuCondensed">
   <ul class="nav flex-column text-white"
       [class.menu-hidden]="!smallMenuExpanded">
     <div class="d-flex justify-content-between text-center" [class.flex-md-column]="largeMenuCondensed">
       <div *ngFor="let option of plainOptions; let i = index" class="flex-fill">
         <li class="nav-item card cursor-pointer">
-          <div class="nav-link d-flex flex-column">
+          <div class="nav-link d-flex flex-column"
+               (click)="resetCondensed()"
+               tabindex="0"
+               role="button"
+               appAriaSelect
+               (ariaSelect)="resetCondensed()">
             <fa-icon [icon]="option.faIcon" [fixedWidth]="true" size="lg"></fa-icon>
             <div class="icon-subtext" [class.d-md-none]="largeMenuCondensed">{{option.name}}</div>
           </div>
@@ -32,7 +49,14 @@
     </div>
     <li *ngFor="let option of options; let i = index"
         class="nav-item card cursor-pointer">
-      <div class="nav-link" [class.pl-2]="!largeMenuCondensed" (click)="toggleDropdown(i)">
+      <div class="nav-link"
+           [class.pl-2]="!largeMenuCondensed"
+           (click)="toggleDropdown(i)"
+           tabindex="0"
+           role="button"
+           [attr.aria-expanded]="option.isExpanded"
+           appAriaSelect
+           (ariaSelect)="toggleDropdown(i)">
         <div class="d-flex justify-content-between-max-sm"
              [class.justify-content-between]="!largeMenuCondensed"
              [class.justify-content-md-center]="largeMenuCondensed">
@@ -53,7 +77,10 @@
       <ul class="nav nav-pills flex-column"
           [class.d-none]="!option.isExpanded"
           [class.d-md-none]="largeMenuCondensed">
-        <li *ngFor="let sub of option.subOptions" class="nav-item card pl-3 nav-sub-option">
+        <li *ngFor="let sub of option.subOptions"
+            class="nav-item card pl-3 nav-sub-option"
+            tabindex="0"
+            role="button">
           <div class="nav-link">{{sub}}</div>
         </li>
       </ul>

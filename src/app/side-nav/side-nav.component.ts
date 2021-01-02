@@ -31,9 +31,6 @@ export class SideNavComponent implements OnInit {
   barsIcon: IconDefinition = faBars;
   leftIcon: IconDefinition = faCaretSquareLeft;
   rightIcon: IconDefinition = faCaretSquareRight;
-  dashIcon: IconDefinition = faTachometerAlt;
-  clientIcon: IconDefinition = faDesktop;
-  feedbackIcon: IconDefinition = faComment;
 
   smallMenuExpanded = false;
   largeMenuCondensed = false;
@@ -90,6 +87,10 @@ export class SideNavComponent implements OnInit {
 
   toggleDropdown(i: number): void {
     this.options[i].isExpanded = !this.options[i].isExpanded;
+    this.resetCondensed();
+  }
+
+  resetCondensed(): void {
     this.largeMenuCondensed = false;
   }
 }
