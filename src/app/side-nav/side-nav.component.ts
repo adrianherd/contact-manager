@@ -77,7 +77,7 @@ export class SideNavComponent implements OnInit {
 
   toggleDropdown(i: number): void {
     this.options[i].isExpanded = !this.options[i].isExpanded;
-    this.largeMenuCondensed = !this.largeMenuCondensed;
+    this.largeMenuCondensed = false;
   }
 }
 
