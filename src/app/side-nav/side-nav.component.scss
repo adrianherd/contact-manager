@@ -51,6 +51,9 @@ div.nav-link:hover {
   }
 }
 
-.condense {
-
+.justify-content-between-max-sm {
+  @include media-breakpoint-down(sm) {
+    -ms-flex-pack: justify !important;
+    justify-content: space-between !important;
+  }
 }

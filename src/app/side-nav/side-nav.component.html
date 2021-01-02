@@ -1,7 +1,7 @@
-<div class="d-flex py-2 pl-2 nav-brand-color text-white"
-     [class.justify-content-between]="!largeMenuCondensed">
+<div class="d-flex py-2 pl-2 nav-brand-color text-white justify-content-between-max-sm"
+     [class.justify-content-md-between]="!largeMenuCondensed">
   <h3 class="font-italic font-weight-bold nav-brand-letter m-0">
-    Spectrum<img *ngIf="!largeMenuCondensed" class="nav-brand-img" src="assets/logo.png"/>
+    Spectrum<img [class.d-md-none]="largeMenuCondensed" class="nav-brand-img" src="assets/logo.png"/>
   </h3>
   <div class="mr-2 my-auto d-md-none">
     <span class="border border-white rounded py-1 px-2 cursor-pointer"
@@ -17,7 +17,7 @@
     </span>
   </div>
 </div>
-<div [class.d-flex]="largeMenuCondensed">
+<div [class.d-md-flex]="largeMenuCondensed">
   <ul class="nav flex-column text-white"
       [class.menu-hidden]="!smallMenuExpanded" [class.condense]="largeMenuCondensed">
     <li *ngFor="let option of options; let i = index"
