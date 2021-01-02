@@ -21,27 +21,11 @@
   <ul class="nav flex-column text-white"
       [class.menu-hidden]="!smallMenuExpanded">
     <div class="d-flex justify-content-between text-center" [class.flex-md-column]="largeMenuCondensed">
-      <div class="flex-fill">
+      <div *ngFor="let option of plainOptions; let i = index" class="flex-fill">
         <li class="nav-item card cursor-pointer">
           <div class="nav-link d-flex flex-column">
-            <fa-icon [icon]="dashIcon" [fixedWidth]="true" size="lg"></fa-icon>
-            <div class="icon-subtext" [class.d-md-none]="largeMenuCondensed">Dashboard</div>
-          </div>
-        </li>
-      </div>
-      <div class="flex-fill">
-        <li class="nav-item card cursor-pointer">
-          <div class="nav-link d-flex flex-column">
-            <fa-icon [icon]="clientIcon" [fixedWidth]="true" size="lg"></fa-icon>
-            <div class="icon-subtext" [class.d-md-none]="largeMenuCondensed">Client Site</div>
-          </div>
-        </li>
-      </div>
-      <div class="flex-fill">
-        <li class="nav-item card cursor-pointer">
-          <div class="nav-link d-flex flex-column">
-            <fa-icon [icon]="feedbackIcon" [fixedWidth]="true" size="lg"></fa-icon>
-            <div class="icon-subtext" [class.d-md-none]="largeMenuCondensed">Feedback</div>
+            <fa-icon [icon]="option.faIcon" [fixedWidth]="true" size="lg"></fa-icon>
+            <div class="icon-subtext" [class.d-md-none]="largeMenuCondensed">{{option.name}}</div>
           </div>
         </li>
       </div>

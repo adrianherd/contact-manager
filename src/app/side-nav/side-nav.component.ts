@@ -38,6 +38,14 @@ export class SideNavComponent implements OnInit {
   smallMenuExpanded = false;
   largeMenuCondensed = false;
 
+  plainOptions: NavItem[] = [
+    { name: 'Dashboard',
+      faIcon: faTachometerAlt },
+    { name: 'Client Site',
+      faIcon: faDesktop },
+    { name: 'Feedback',
+      faIcon: faComment },
+  ];
   options: NavItem[] = [
     { name: 'Settings',
       faIcon: faCog,
