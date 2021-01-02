@@ -1,11 +1,25 @@
-<div class="font-italic font-weight-bold">
-  Spectrum <img />
+<div class="d-flex justify-content-between py-2 pl-2 nav-brand-color text-white">
+  <h3 class="font-italic font-weight-bold nav-brand-letter m-0">
+    Spectrum<img *ngIf="!largeMenuCondensed" class="nav-brand-img" src="assets/logo.png"/>
+  </h3>
+  <div class="mr-2 my-auto d-md-none">
+    <span class="border border-white rounded py-1 px-2"
+          [class.hamburger-expanded]="smallMenuExpanded"
+          (click)="smallMenuExpanded = !smallMenuExpanded">
+      <fa-icon [icon]="barsIcon"></fa-icon>
+    </span>
+  </div>
+  <div class="mr-2 my-auto d-none d-md-block">
+    <span class="py-1 px-2"
+          (click)="largeMenuCondensed = !largeMenuCondensed">
+      <fa-icon [icon]="largeMenuCondensed ? rightIcon : leftIcon" size="2x"></fa-icon>
+    </span>
+  </div>
 </div>
-<ul class="nav nav-pills flex-column">
+<ul class="nav nav-pills flex-column text-white" [class.menu-hidden]="!smallMenuExpanded">
   <li *ngFor="let option of options; let i = index"
-      class="nav-item card cursor-pointer"
-      [class.selected]="option.isExpanded">
-    <div class="nav-link" (click)="toggleDropdown(i)">
+      class="nav-item card cursor-pointer">
+    <div class="nav-link pl-2" (click)="toggleDropdown(i)">
       <div class="d-flex justify-content-between">
         <div>
           <fa-icon *ngIf="option.faIcon"
@@ -13,15 +27,17 @@
                    [fixedWidth]="true"
                    [classes]="['mr-2']">
           </fa-icon>
-          {{option.name}}
+          <span [class.menu-condensed]="largeMenuCondensed">{{option.name}}</span>
         </div>
-        <fa-icon [icon]="option.isExpanded ? minusIcon : plusIcon"
-                 [fixedWidth]="true">
-        </fa-icon>
+        <div [class.menu-condensed]="largeMenuCondensed">
+          <fa-icon [icon]="option.isExpanded ? minusIcon : plusIcon"
+                   [fixedWidth]="true">
+          </fa-icon>
+        </div>
       </div>
     </div>
     <ul class="nav nav-pills flex-column" [class.d-none]="!option.isExpanded">
-      <li *ngFor="let sub of option.subOptions" class="nav-item card pl-3">
+      <li *ngFor="let sub of option.subOptions" class="nav-item card pl-3 nav-sub-option">
         <div class="nav-link">{{sub}}</div>
       </li>
     </ul>

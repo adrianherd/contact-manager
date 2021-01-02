@@ -13,6 +13,9 @@ import {
   faTools,
   faPlusSquare,
   faMinusSquare,
+  faBars,
+  faCaretSquareLeft,
+  faCaretSquareRight,
 } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
@@ -23,6 +26,13 @@ import {
 export class SideNavComponent implements OnInit {
   plusIcon: IconDefinition = faPlusSquare;
   minusIcon: IconDefinition = faMinusSquare;
+  barsIcon: IconDefinition = faBars;
+  leftIcon: IconDefinition = faCaretSquareLeft;
+  rightIcon: IconDefinition = faCaretSquareRight;
+
+  smallMenuExpanded = false;
+  largeMenuCondensed = false;
+
   options: NavItem[] = [
     { name: 'Settings',
       faIcon: faCog,
@@ -67,6 +77,7 @@ export class SideNavComponent implements OnInit {
 
   toggleDropdown(i: number): void {
     this.options[i].isExpanded = !this.options[i].isExpanded;
+    this.largeMenuCondensed = !this.largeMenuCondensed;
   }
 }
 

@@ -1,20 +1,52 @@
+@import "node_modules/bootstrap/scss/functions";
+@import "node_modules/bootstrap/scss/variables";
+@import "node_modules/bootstrap/scss/mixins/_breakpoints";
+
+$nav-item-color: #34495e;
+$nav-item-color-darker: #2f4255;
+$nav-brand-color: #0f5ca8;
+
 ul, .card {
-  background-color: #34495e;
+  background-color: $nav-item-color;
   border-radius: 0;
 }
 
-ul {
-  color: white;
+.nav-brand-color {
+  background-color: $nav-brand-color;
+}
+
+.nav-brand-letter {
+  letter-spacing: -1px;
+}
+
+.nav-brand-img {
+  width: 7rem;
+  height: 1.5rem;
+}
+
+.hamburger-expanded {
+  color: $nav-brand-color;
+  border-color: $nav-brand-color;
+  background-color: white
 }
 
 .cursor-pointer{
   cursor: pointer;
 }
 
-.selected {
-  background-color: #2f4255;
+.nav-sub-option,
+div.nav-link:hover {
+  background-color: $nav-item-color-darker;
 }
 
-.nav-item:hover {
-  background-color: #2f4255;
+.menu-hidden {
+  @include media-breakpoint-down(sm) {
+    display: none;
+  }
+}
+
+.menu-condensed {
+  @include media-breakpoint-up(md) {
+    display: none;
+  }
 }
