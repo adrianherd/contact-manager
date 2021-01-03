@@ -1,7 +1,7 @@
 <!-- Spectrum Brand Area -->
 <div class="d-flex py-2 pl-2 nav-brand-color text-white justify-content-between-max-sm"
      [class.justify-content-md-between]="!largeMenuCondensed">
-  <!-- Spectrum & wing -->
+  <!-- Spectrum with wing -->
   <h3 class="font-italic font-weight-bold nav-brand-letter m-0">
     Spectrum<img [class.d-md-none]="largeMenuCondensed"
                  class="nav-brand-img"
@@ -34,7 +34,7 @@
 </div>
 
 <!-- Navigation Bar : Accessible, Mobile, Responsive -->
-<div [class.d-md-flex]="largeMenuCondensed">
+<nav [class.d-md-flex]="largeMenuCondensed" role="navigation">
   <ul class="nav flex-column text-white"
       [class.menu-hidden]="!smallMenuExpanded">
     <!-- 3 button set: Dashboard, Client Site, Feedback -->
@@ -70,16 +70,17 @@
              [class.justify-content-between]="!largeMenuCondensed"
              [class.justify-content-md-center]="largeMenuCondensed">
           <!-- Option Icon & Name -->
-          <div [attr.aria-label]="option.name" [title]="option.name">
-            <fa-icon *ngIf="option.faIcon"
-                     [icon]="option.faIcon"
-                     [fixedWidth]="true">
-            </fa-icon>
+          <div class="d-flex">
+            <div [attr.aria-label]="option.name" [title]="option.name">
+              <fa-icon *ngIf="option.faIcon"
+                       [icon]="option.faIcon"
+                       [fixedWidth]="true">
+              </fa-icon>
+            </div>
             <span class="ml-2" [class.menu-condensed]="largeMenuCondensed">{{option.name}}</span>
           </div>
           <!-- Plus/Minus Icon -->
-          <div [class.menu-condensed]="largeMenuCondensed"
-               aria-label="Next option toggle: {{option.isExpanded ? 'Collapse' : 'Expand' }}">
+          <div [class.menu-condensed]="largeMenuCondensed">
             <fa-icon [icon]="option.isExpanded ? minusIcon : plusIcon"
                      [fixedWidth]="true">
             </fa-icon>
@@ -97,5 +98,5 @@
       </ul>
     </li>
   </ul>
-</div>
+</nav>
 
