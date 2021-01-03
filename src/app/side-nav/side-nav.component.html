@@ -1,12 +1,14 @@
 <!-- Spectrum Brand Area -->
 <div class="d-flex py-2 pl-2 nav-brand-color text-white justify-content-between-max-sm"
      [class.justify-content-md-between]="!largeMenuCondensed">
+  <!-- Spectrum & wing -->
   <h3 class="font-italic font-weight-bold nav-brand-letter m-0">
     Spectrum<img [class.d-md-none]="largeMenuCondensed"
                  class="nav-brand-img"
                  src="assets/logo.png"
                  alt="Extending horizontal stripes, right wing."/>
   </h3>
+  <!-- Menu Expand (xs,sm) -->
   <div class="mr-2 my-auto d-md-none">
     <span class="border border-white rounded py-1 px-2 cursor-pointer"
           [class.hamburger-expanded]="smallMenuExpanded"
@@ -18,6 +20,7 @@
       <fa-icon [icon]="barsIcon"></fa-icon>
     </span>
   </div>
+  <!-- Menu condense (md+) -->
   <div class="mx-2 my-auto menu-hidden">
     <span class="cursor-pointer"
           (click)="largeMenuCondensed = !largeMenuCondensed"
@@ -34,24 +37,28 @@
 <div [class.d-md-flex]="largeMenuCondensed">
   <ul class="nav flex-column text-white"
       [class.menu-hidden]="!smallMenuExpanded">
-    <div class="d-flex justify-content-between text-center" [class.flex-md-column]="largeMenuCondensed">
+    <!-- 3 button set: Dashboard, Client Site, Feedback -->
+    <li class="d-flex justify-content-between text-center" [class.flex-md-column]="largeMenuCondensed">
       <div *ngFor="let option of plainOptions; let i = index" class="flex-fill">
-        <li class="nav-item card cursor-pointer">
+        <div class="nav-item card cursor-pointer">
           <div class="nav-link d-flex flex-column"
                (click)="resetCondensed()"
                tabindex="0"
                role="button"
                appAriaSelect
                (ariaSelect)="resetCondensed()">
-            <fa-icon [icon]="option.faIcon" [fixedWidth]="true" size="lg"></fa-icon>
+            <div [attr.aria-label]="option.name" [title]="option.name">
+              <fa-icon [icon]="option.faIcon" [fixedWidth]="true" size="lg"></fa-icon>
+            </div>
             <div class="icon-subtext" [class.d-md-none]="largeMenuCondensed">{{option.name}}</div>
           </div>
-        </li>
+        </div>
       </div>
-    </div>
+    </li>
+    <!-- Expandable Menu Options -->
     <li *ngFor="let option of options; let i = index"
-        class="nav-item card cursor-pointer">
-      <div class="nav-link"
+        class="nav-item card">
+      <div class="nav-link cursor-pointer"
            [class.pl-2]="!largeMenuCondensed"
            (click)="toggleDropdown(i)"
            tabindex="0"
@@ -62,28 +69,30 @@
         <div class="d-flex justify-content-between-max-sm"
              [class.justify-content-between]="!largeMenuCondensed"
              [class.justify-content-md-center]="largeMenuCondensed">
-          <div>
+          <!-- Option Icon & Name -->
+          <div [attr.aria-label]="option.name" [title]="option.name">
             <fa-icon *ngIf="option.faIcon"
                      [icon]="option.faIcon"
                      [fixedWidth]="true">
             </fa-icon>
             <span class="ml-2" [class.menu-condensed]="largeMenuCondensed">{{option.name}}</span>
           </div>
-          <div [class.menu-condensed]="largeMenuCondensed">
+          <!-- Plus/Minus Icon -->
+          <div [class.menu-condensed]="largeMenuCondensed"
+               aria-label="Next option toggle: {{option.isExpanded ? 'Collapse' : 'Expand' }}">
             <fa-icon [icon]="option.isExpanded ? minusIcon : plusIcon"
                      [fixedWidth]="true">
             </fa-icon>
           </div>
         </div>
       </div>
+      <!-- SubNavigation: expanded -->
       <ul class="nav nav-pills flex-column"
           [class.d-none]="!option.isExpanded"
           [class.d-md-none]="largeMenuCondensed">
         <li *ngFor="let sub of option.subOptions"
-            class="nav-item card pl-3 nav-sub-option"
-            tabindex="0"
-            role="button">
-          <div class="nav-link">{{sub}}</div>
+            class="nav-item card pl-3 nav-sub-option">
+          <div class="nav-link" tabindex="0" role="button">{{sub}}</div>
         </li>
       </ul>
     </li>
