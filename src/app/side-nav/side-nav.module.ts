@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { DirectivesModule } from '../directives/directives.module';
+import { DirectivesModule } from '../shared/directives/directives.module';
 import { SideNavComponent } from './side-nav.component';
 
 @NgModule({

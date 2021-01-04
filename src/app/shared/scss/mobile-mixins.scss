@@ -1,0 +1,15 @@
+@import "node_modules/bootstrap/scss/functions";
+@import "node_modules/bootstrap/scss/variables";
+@import "node_modules/bootstrap/scss/mixins/_breakpoints";
+
+@mixin hide-in-mobile-screen {
+  @include media-breakpoint-down(sm) {
+    display: none;
+  }
+}
+
+@mixin hide-in-desktop-screen {
+  @include media-breakpoint-up(md) {
+    display: none;
+  }
+}

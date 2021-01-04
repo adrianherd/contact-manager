@@ -1,4 +1,8 @@
 import { Component } from '@angular/core';
+import {
+  IconDefinition,
+  faPowerOff,
+} from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +11,5 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'contact-manager';
+  powerIcon: IconDefinition = faPowerOff;
 }

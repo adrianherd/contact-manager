@@ -1,11 +1,14 @@
+// Necessary bootstrap files
 @import "node_modules/bootstrap/scss/functions";
 @import "node_modules/bootstrap/scss/variables";
 @import "node_modules/bootstrap/scss/mixins/_breakpoints";
 
-$nav-item-color: #34495e;
-$nav-item-color-darker: #2f4255;
-$nav-brand-color: #0f5ca8;
+// Shared custom scss
+@import "src/app/shared/scss/aria.scss";
+@import "src/app/shared/scss/mobile-mixins.scss";
+@import "src/app/shared/scss/variables.scss";
 
+// Styling
 ul, .card {
   background-color: $nav-item-color;
   border-radius: 0;
@@ -29,25 +32,18 @@ ul, .card {
   background-color: white
 }
 
-.cursor-pointer{
-  cursor: pointer;
-}
-
 .nav-sub-option,
 div.nav-link:hover {
   background-color: $nav-item-color-darker;
 }
 
+// Responsiveness
 .menu-hidden {
-  @include media-breakpoint-down(sm) {
-    display: none;
-  }
+  @include hide-in-mobile-screen();
 }
 
 .menu-condensed {
-  @include media-breakpoint-up(md) {
-    display: none;
-  }
+  @include hide-in-desktop-screen();
 }
 
 .justify-content-between-max-sm {
@@ -57,13 +53,9 @@ div.nav-link:hover {
   }
 }
 
-.icon-subtext {
-  font-size: .75rem;
-}
-
+// Accessibility
 div[tabindex='0']:focus,
 span[tabindex='0']:focus,
 li[tabindex='0']:focus {
-  outline: orange solid 4px;
-  outline-offset: -4px;
+  @include aria-focus();
 }

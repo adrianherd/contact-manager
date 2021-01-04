@@ -18,6 +18,8 @@ import {
   faTachometerAlt,
   faDesktop,
   faComment,
+  faSignOutAlt,
+  faPowerOff,
 } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
@@ -31,6 +33,7 @@ export class SideNavComponent implements OnInit {
   barsIcon: IconDefinition = faBars;
   leftIcon: IconDefinition = faCaretSquareLeft;
   rightIcon: IconDefinition = faCaretSquareRight;
+  powerIcon: IconDefinition = faPowerOff;
 
   smallMenuExpanded = false;
   largeMenuCondensed = false;
@@ -46,21 +49,26 @@ export class SideNavComponent implements OnInit {
   options: NavItem[] = [
     { name: 'Settings',
       faIcon: faCog,
+      isExpandable: true,
       isExpanded: false,
       subOptions: ['Sub NavItem', 'Sub NavItem'] },
     { name: 'Dealer Manager',
       faIcon: faSitemap,
+      isExpandable: true,
       isExpanded: false,
       subOptions: ['Sub NavItem', 'Sub NavItem'] },
     { name: 'Resource Center',
+      isExpandable: true,
       isExpanded: false,
       faIcon: faClipboard,
       subOptions: ['Sub NavItem', 'Sub NavItem'] },
     { name: 'SEO',
+      isExpandable: true,
       isExpanded: false,
       faIcon: faSearchPlus,
       subOptions: ['Sub NavItem', 'Sub NavItem'] },
     { name: 'Contact Manager',
+      isExpandable: true,
       isExpanded: false,
       faIcon: faUser,
       subOptions: ['Sub NavItem', 'Sub NavItem'] },
@@ -69,17 +77,24 @@ export class SideNavComponent implements OnInit {
       isExpanded: false,
       subOptions: ['Sub NavItem', 'Sub NavItem'] },
     { name: 'Blog',
+      isExpandable: true,
       isExpanded: false,
       faIcon: faBlog,
       subOptions: ['Sub NavItem', 'Sub NavItem'] },
     { name: 'Client',
+      isExpandable: true,
       isExpanded: false,
       faIcon: faAddressCard,
       subOptions: ['Sub NavItem', 'Sub NavItem'] },
     { name: 'Features',
+      isExpandable: true,
       faIcon: faTools,
       isExpanded: false,
       subOptions: ['Sub NavItem', 'Sub NavItem'] },
+    { name: 'Log Off',
+      isExpandable: false,
+      faIcon: faSignOutAlt,
+      isMobileOnly: true, }
   ];
 
   ngOnInit(): void {
@@ -98,6 +113,8 @@ export class SideNavComponent implements OnInit {
 type NavItem = {
   name: string;
   faIcon?: IconDefinition;
+  isExpandable?: boolean;
   isExpanded?: boolean;
   subOptions?: string[];
+  isMobileOnly?: boolean;
 };

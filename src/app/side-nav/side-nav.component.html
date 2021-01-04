@@ -57,7 +57,8 @@
     </li>
     <!-- Expandable Menu Options -->
     <li *ngFor="let option of options; let i = index"
-        class="nav-item card">
+        class="nav-item card"
+        [class.menu-hidden]="option.isMobileOnly">
       <div class="nav-link cursor-pointer"
            [class.pl-2]="!largeMenuCondensed"
            (click)="toggleDropdown(i)"
@@ -80,7 +81,7 @@
             <span class="ml-2" [class.menu-condensed]="largeMenuCondensed">{{option.name}}</span>
           </div>
           <!-- Plus/Minus Icon -->
-          <div [class.menu-condensed]="largeMenuCondensed">
+          <div *ngIf="option.isExpandable" [class.menu-condensed]="largeMenuCondensed">
             <fa-icon [icon]="option.isExpanded ? minusIcon : plusIcon"
                      [fixedWidth]="true">
             </fa-icon>
@@ -88,7 +89,8 @@
         </div>
       </div>
       <!-- SubNavigation: expanded -->
-      <ul class="nav nav-pills flex-column"
+      <ul *ngIf="option.isExpandable"
+          class="nav nav-pills flex-column"
           [class.d-none]="!option.isExpanded"
           [class.d-md-none]="largeMenuCondensed">
         <li *ngFor="let sub of option.subOptions"
@@ -99,4 +101,3 @@
     </li>
   </ul>
 </nav>
-
