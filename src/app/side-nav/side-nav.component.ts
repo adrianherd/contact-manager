@@ -19,7 +19,6 @@ import {
   faDesktop,
   faComment,
   faSignOutAlt,
-  faPowerOff,
 } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
@@ -33,7 +32,6 @@ export class SideNavComponent implements OnInit {
   barsIcon: IconDefinition = faBars;
   leftIcon: IconDefinition = faCaretSquareLeft;
   rightIcon: IconDefinition = faCaretSquareRight;
-  powerIcon: IconDefinition = faPowerOff;
 
   smallMenuExpanded = false;
   largeMenuCondensed = false;
