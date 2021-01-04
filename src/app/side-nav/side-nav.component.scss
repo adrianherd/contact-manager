@@ -53,15 +53,27 @@ div.nav-link:hover {
 .w-275px {
   @include media-breakpoint-up(md){
     // 276 px
-    width: 17.25rem;
-    min-width: 17.25rem
+    width: $nav-side-width;
+    min-width: $nav-side-width;
   }
 }
 
 .w-65px {
   @include media-breakpoint-up(md) {
     // 64px
-    width: 4rem;
+    width: $nav-side-width-sm;
+  }
+}
+
+.m-275px {
+  @include media-breakpoint-up(md) {
+    margin-left: $nav-side-width;
+  }
+}
+
+.m-65px {
+  @include media-breakpoint-up(md) {
+    margin-left: $nav-side-width-sm;
   }
 }
 
@@ -73,27 +85,44 @@ div.nav-link:hover {
   @include hide-in-desktop-screen();
 }
 
-.justify-content-between-max-sm {
+.center-max-sm {
+  @include media-breakpoint-down(sm) {
+    -ms-flex-pack: center !important;
+    justify-content: center !important;
+  }
+}
+
+.between-max-sm {
   @include media-breakpoint-down(sm) {
     -ms-flex-pack: justify !important;
     justify-content: space-between !important;
   }
 }
 
-.flex-fill-max-sm {
+.fill-max-sm {
   @include media-breakpoint-down(sm) {
     -ms-flex: 1 1 auto !important;
     flex: 1 1 auto !important;
   }
 }
 
-// Accessibility
-div[tabindex='0']:focus,
-span[tabindex='0']:focus,
-li[tabindex='0']:focus {
-  @include aria-focus();
+.flex-column-max-sm {
+  @include media-breakpoint-down(sm) {
+    -ms-flex-direction: column !important;
+    flex-direction: column !important;
+  }
 }
 
+.overflow-hidden-min-md {
+  @include media-breakpoint-up(md) {
+    overflow: hidden !important;
+  }
+}
+.h-100-min-md {
+  @include media-breakpoint-up(md) {
+    height: 100% !important;
+  }
+}
 
 // Nav
 .nav-wrapper {
@@ -104,7 +133,12 @@ li[tabindex='0']:focus {
     float: left;
     margin-bottom: 1rem;
   }
-  @include media-breakpoint-down(sm) {
-    width: 100%;
-  }
 }
+
+// Accessibility
+div[tabindex='0']:focus,
+span[tabindex='0']:focus,
+li[tabindex='0']:focus {
+  @include aria-focus();
+}
+

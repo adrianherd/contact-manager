@@ -1,17 +1,20 @@
-<div class="d-flex">
-  <!-- Spectrum Brand Area -->
-  <div class="d-flex py-2 pl-2 nav-brand-color text-white flex-fill-max-sm justify-content-between-max-sm"
-       [class.justify-content-md-between]="!largeMenuCondensed"
-       [class.w-275px]="!largeMenuCondensed">
-    <!-- Spectrum with wing -->
-    <h5 class="font-italic font-weight-bold nav-brand-letter m-0" >
-      Spectrum<img [class.d-md-none]="largeMenuCondensed"
-                   class="nav-brand-img"
-                   src="assets/logo.png"
-                   alt="Extending horizontal stripes, right wing."/>
-    </h5>
-    <!-- Menu Expand (xs,sm) -->
-    <div class="mr-2 my-auto d-md-none">
+<div class="overflow-hidden-min-md h-100-min-md w-100">
+  <div class="d-flex" [class.justify-content-md-center]="largeMenuCondensed">
+    <!-- Spectrum Brand Area -->
+    <div class="d-flex py-2 nav-brand-color text-white fill-max-sm between-max-sm"
+         [class.justify-content-md-between]="!largeMenuCondensed"
+         [class.w-275px]="!largeMenuCondensed"
+         [class.w-65px]="largeMenuCondensed"
+         [class.justify-content-md-center]="largeMenuCondensed">
+      <!-- Spectrum with wing -->
+      <h5 class="font-italic font-weight-bold nav-brand-letter ml-2 my-auto"
+          [class.d-md-none]="largeMenuCondensed">
+        Spectrum<img class="nav-brand-img"
+                     src="assets/logo.png"
+                     alt="Extending horizontal stripes, right wing."/>
+      </h5>
+      <!-- Menu Expand (xs,sm) -->
+      <div class="mr-2 my-auto d-md-none">
       <span class="border border-white rounded py-1 px-2 cursor-pointer"
             [class.hamburger-expanded]="smallMenuExpanded"
             (click)="smallMenuExpanded = !smallMenuExpanded"
@@ -21,112 +24,115 @@
             (ariaSelect)="smallMenuExpanded = !smallMenuExpanded">
         <fa-icon [icon]="barsIcon"></fa-icon>
       </span>
+      </div>
+      <!-- Menu condense (md+) -->
+      <div class="mx-2 my-auto menu-hidden" >
+        <span class="cursor-pointer"
+              (click)="largeMenuCondensed = !largeMenuCondensed"
+              tabindex="0"
+              role="button"
+              appAriaSelect
+              (ariaSelect)="largeMenuCondensed = !largeMenuCondensed">
+          <fa-icon [icon]="largeMenuCondensed ? rightIcon : leftIcon" size="lg" [fixedWidth]="true"></fa-icon>
+        </span>
+      </div>
     </div>
-    <!-- Menu condense (md+) -->
-    <div class="mx-2 my-auto menu-hidden">
-      <span class="cursor-pointer"
-            (click)="largeMenuCondensed = !largeMenuCondensed"
-            tabindex="0"
-            role="button"
-            appAriaSelect
-            (ariaSelect)="largeMenuCondensed = !largeMenuCondensed">
-        <fa-icon [icon]="largeMenuCondensed ? rightIcon : leftIcon" size="lg" [fixedWidth]="true"></fa-icon>
-      </span>
-    </div>
-  </div>
-  <!-- Title Bar Area (md+) -->
-  <div class="d-md-flex justify-content-between align-items-center flex-fill nav-title-bg text-white menu-hidden">
-    <!-- Administration Title -->
-    <div class="mx-2">
-      Spectrum Communications & Consulting Inc. Administration
-    </div>
-    <!-- Account Short Info -->
-    <div>
-      <span class="d-inline special-icon rounded mx-1">spectrum</span>
-      <span class="mr-2">brookek@spectrum.inc</span>
-      <span class="menu-hidden cursor-pointer mx-2 p-1"
-            aria-label="Log off"
-            title="Log off"
-            tabindex="0"
-            role="button">
+    <!-- Title Bar Area (md+) -->
+    <div class="d-md-flex justify-content-between align-items-center flex-fill nav-title-bg text-white menu-hidden">
+      <!-- Administration Title -->
+      <div class="mx-2">
+        Spectrum Communications & Consulting Inc. Administration
+      </div>
+      <!-- Account Short Info -->
+      <div>
+        <span class="d-inline special-icon rounded mx-1">spectrum</span>
+        <span class="mr-2">brookek@spectrum.inc</span>
+        <span class="menu-hidden cursor-pointer mx-2 p-1"
+              aria-label="Log off"
+              title="Log off"
+              tabindex="0"
+              role="button">
           <fa-icon [icon]="powerIcon"></fa-icon>
         </span>
+      </div>
     </div>
   </div>
-</div>
 
-<div class="d-flex">
-  <!-- Navigation Bar : Accessible, Mobile, Responsive -->
-  <nav class="nav-wrapper nav-bg "
-       [class.d-md-flex]="largeMenuCondensed"
-       [class.w-275px]="!largeMenuCondensed"
-       [class.w-65px]="largeMenuCondensed"
-       role="navigation">
-    <ul class="nav flex-column text-white"
-        [class.menu-hidden]="!smallMenuExpanded">
-      <!-- 3 button set: Dashboard, Client Site, Feedback -->
-      <li class="d-flex justify-content-between text-center" [class.flex-md-column]="largeMenuCondensed">
-        <div *ngFor="let option of plainOptions; let i = index" class="flex-fill">
-          <div class="nav-item card cursor-pointer">
-            <div class="nav-link d-flex flex-column"
-                 (click)="resetCondensed()"
-                 tabindex="0"
-                 role="button"
-                 appAriaSelect
-                 (ariaSelect)="resetCondensed()">
-              <div [attr.aria-label]="option.name" [title]="option.name">
-                <fa-icon [icon]="option.faIcon" [fixedWidth]="true" size="lg"></fa-icon>
+  <div class="d-flex flex-column-max-sm">
+    <!-- Navigation Bar : Accessible, Mobile, Responsive -->
+    <nav class="nav-wrapper nav-bg"
+         [class.d-md-flex]="largeMenuCondensed"
+         [class.w-275px]="!largeMenuCondensed"
+         [class.w-65px]="largeMenuCondensed"
+         [class.menu-hidden]="!smallMenuExpanded"
+         role="navigation">
+      <ul class="nav flex-column text-white pb-md-5">
+        <!-- 3 button set: Dashboard, Client Site, Feedback -->
+        <li class="d-flex justify-content-between text-center" [class.flex-md-column]="largeMenuCondensed">
+          <div *ngFor="let option of plainOptions; let i = index" class="flex-fill">
+            <div class="nav-item card cursor-pointer">
+              <div class="nav-link d-flex flex-column"
+                   (click)="resetCondensed()"
+                   tabindex="0"
+                   role="button"
+                   appAriaSelect
+                   (ariaSelect)="resetCondensed()">
+                <div [attr.aria-label]="option.name" [title]="option.name">
+                  <fa-icon [icon]="option.faIcon" [fixedWidth]="true" size="lg"></fa-icon>
+                </div>
+                <div class="icon-subtext text-nowrap" [class.d-md-none]="largeMenuCondensed">{{option.name}}</div>
               </div>
-              <div class="icon-subtext text-nowrap" [class.d-md-none]="largeMenuCondensed">{{option.name}}</div>
             </div>
           </div>
-        </div>
-      </li>
-      <!-- Expandable Menu Options -->
-      <li *ngFor="let option of options; let i = index"
-          class="nav-item card"
-          [class.d-md-none]="option.isMobileOnly">
-        <div class="nav-link cursor-pointer"
-             [class.px-2]="!largeMenuCondensed"
-             (click)="toggleDropdown(i)"
-             tabindex="0"
-             role="button"
-             [attr.aria-expanded]="option.isExpanded"
-             appAriaSelect
-             (ariaSelect)="toggleDropdown(i)">
-          <div class="d-flex justify-content-between-max-sm"
-               [class.justify-content-between]="!largeMenuCondensed"
-               [class.justify-content-md-center]="largeMenuCondensed">
-            <!-- Option Icon & Name -->
-            <div class="d-flex">
-              <div [attr.aria-label]="option.name" [title]="option.name">
-                <fa-icon *ngIf="option.faIcon"
-                         [icon]="option.faIcon"
+        </li>
+        <!-- Expandable Menu Options -->
+        <li *ngFor="let option of options; let i = index"
+            class="nav-item card"
+            [class.d-md-none]="option.isMobileOnly">
+          <div class="nav-link cursor-pointer"
+               [class.px-2]="!largeMenuCondensed"
+               (click)="toggleDropdown(i)"
+               tabindex="0"
+               role="button"
+               [attr.aria-expanded]="option.isExpanded"
+               appAriaSelect
+               (ariaSelect)="toggleDropdown(i)">
+            <div class="d-flex between-max-sm"
+                 [class.justify-content-between]="!largeMenuCondensed"
+                 [class.justify-content-md-center]="largeMenuCondensed">
+              <!-- Option Icon & Name -->
+              <div class="d-flex">
+                <div [attr.aria-label]="option.name" [title]="option.name">
+                  <fa-icon *ngIf="option.faIcon"
+                           [icon]="option.faIcon"
+                           [fixedWidth]="true">
+                  </fa-icon>
+                </div>
+                <span class="ml-2" [class.menu-condensed]="largeMenuCondensed">{{option.name}}</span>
+              </div>
+              <!-- Plus/Minus Icon -->
+              <div *ngIf="option.isExpandable" [class.menu-condensed]="largeMenuCondensed">
+                <fa-icon [icon]="option.isExpanded ? minusIcon : plusIcon"
                          [fixedWidth]="true">
                 </fa-icon>
               </div>
-              <span class="ml-2" [class.menu-condensed]="largeMenuCondensed">{{option.name}}</span>
-            </div>
-            <!-- Plus/Minus Icon -->
-            <div *ngIf="option.isExpandable" [class.menu-condensed]="largeMenuCondensed">
-              <fa-icon [icon]="option.isExpanded ? minusIcon : plusIcon"
-                       [fixedWidth]="true">
-              </fa-icon>
             </div>
           </div>
-        </div>
-        <!-- SubNavigation: expanded -->
-        <ul *ngIf="option.isExpandable"
-            class="nav nav-pills flex-column"
-            [class.d-none]="!option.isExpanded"
-            [class.d-md-none]="largeMenuCondensed">
-          <li *ngFor="let sub of option.subOptions"
-              class="nav-item card pl-3 nav-sub-option">
-            <div class="nav-link" tabindex="0" role="button">{{sub}}</div>
-          </li>
-        </ul>
-      </li>
-    </ul>
-  </nav>
+          <!-- SubNavigation: expanded -->
+          <ul *ngIf="option.isExpandable"
+              class="nav nav-pills flex-column"
+              [class.d-none]="!option.isExpanded"
+              [class.d-md-none]="largeMenuCondensed">
+            <li *ngFor="let sub of option.subOptions"
+                class="nav-item card pl-3 nav-sub-option">
+              <div class="nav-link" tabindex="0" role="button">{{sub}}</div>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+    <div class="pl-1 {{!largeMenuCondensed ? 'm-275px' : 'm-65px'}}">
+      <ng-content></ng-content>
+    </div>
+  </div>
 </div>
-

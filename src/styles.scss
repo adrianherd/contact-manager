@@ -1,2 +1,11 @@
 /* You can add global styles to this file, and also import other style files */
 @import "~bootstrap/dist/css/bootstrap.css";
+@import "src/app/shared/scss/variables.scss";
+
+html, body {
+  height: 100%;
+}
+
+.app-bg {
+  background-color: $app-color;
+}
