@@ -28,11 +28,11 @@
       <!-- Menu condense (md+) -->
       <div class="mx-2 my-auto menu-hidden" >
         <span class="cursor-pointer"
-              (click)="largeMenuCondensed = !largeMenuCondensed"
+              (click)="toggleCondense()"
               tabindex="0"
               role="button"
               appAriaSelect
-              (ariaSelect)="largeMenuCondensed = !largeMenuCondensed">
+              (ariaSelect)="toggleCondense()">
           <fa-icon [icon]="largeMenuCondensed ? rightIcon : leftIcon" size="lg" [fixedWidth]="true"></fa-icon>
         </span>
       </div>
@@ -66,7 +66,7 @@
          [class.w-65px]="largeMenuCondensed"
          [class.menu-hidden]="!smallMenuExpanded"
          role="navigation">
-      <ul class="nav flex-column text-white pb-md-5">
+      <ul class="nav flex-column flex-nowrap text-white pb-md-5 w-100" #navList>
         <!-- 3 button set: Dashboard, Client Site, Feedback -->
         <li class="d-flex justify-content-between text-center" [class.flex-md-column]="largeMenuCondensed">
           <div *ngFor="let option of plainOptions; let i = index" class="flex-fill">
@@ -120,7 +120,7 @@
           </div>
           <!-- SubNavigation: expanded -->
           <ul *ngIf="option.isExpandable"
-              class="nav nav-pills flex-column"
+              class="nav flex-column"
               [class.d-none]="!option.isExpanded"
               [class.d-md-none]="largeMenuCondensed">
             <li *ngFor="let sub of option.subOptions"
@@ -128,6 +128,17 @@
               <div class="nav-link" tabindex="0" role="button">{{sub}}</div>
             </li>
           </ul>
+        </li>
+        <!-- Fake Icon for full scrolling. Height 100%, fixed position, overflow === incomplete scrolling -->
+        <li *ngIf="largeMenuCondensed" class="nav-item card invisible">
+          <div class="nav-link cursor-pointer pb-5">
+            <div class="d-flex between-max-sm justify-content-md-center">
+              <!-- Option Icon -->
+              <div class="d-flex">
+                <div><fa-icon [icon]="powerIcon" [fixedWidth]="true"></fa-icon></div>
+              </div>
+            </div>
+          </div>
         </li>
       </ul>
     </nav>

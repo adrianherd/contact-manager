@@ -19,23 +19,30 @@ export class AriaSelectDirective {
   isFocused = false;
 
   @HostListener('window:keyup', ['$event'])
-  onkeyup(event: { keyCode: string | number; }): void {
+  onkeyup(event: { keyCode: string | number; }): boolean {
     // Space key up
     if ((this.el.nativeElement === document.activeElement || this.isFocused)
       && event.keyCode === 32)  {
       this.ariaSelect.emit();
       this.ariaSpace.emit();
+
+      // prevent browser's default page actions for pressing space (scrolls to bottom otherwise)
+      return false;
     }
+    return true;
   }
 
   @HostListener('window:keydown', ['$event'])
-  onkeydown(event: { keyCode: string | number; }): void {
+  onkeydown(event: { keyCode: string | number; }): boolean {
     // Enter key down
     if ((this.el.nativeElement === document.activeElement || this.isFocused)
       && event.keyCode === 13) {
       this.ariaSelect.emit();
       this.ariaEnter.emit();
+      // prevent browser's default page actions for pressing enter
+      return false;
     }
+    return true;
   }
 
   @HostListener('focus', ['$event'])

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ElementRef, Renderer2, ViewChild } from '@angular/core';
 import {
   IconDefinition,
   faCog,
@@ -21,6 +21,7 @@ import {
   faSignOutAlt,
   faPowerOff,
 } from '@fortawesome/free-solid-svg-icons';
+import { last } from 'rxjs/operators';
 
 @Component({
   selector: 'side-nav',
@@ -34,6 +35,8 @@ export class SideNavComponent {
   leftIcon: IconDefinition = faCaretSquareLeft;
   rightIcon: IconDefinition = faCaretSquareRight;
   powerIcon: IconDefinition = faPowerOff;
+
+  @ViewChild('navList') navList: ElementRef;
 
   smallMenuExpanded = false;
   largeMenuCondensed = false;
@@ -105,6 +108,10 @@ export class SideNavComponent {
 
   resetCondensed(): void {
     this.largeMenuCondensed = false;
+  }
+
+  toggleCondense(): void {
+    this.largeMenuCondensed = !this.largeMenuCondensed;
   }
 }
 
