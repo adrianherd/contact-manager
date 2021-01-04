@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, OnInit, Output, ViewChild } from '@angular/core';
 import {
   IconDefinition,
   faCog,
@@ -19,6 +19,7 @@ import {
   faDesktop,
   faComment,
   faSignOutAlt,
+  faPowerOff,
 } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
@@ -26,12 +27,13 @@ import {
   templateUrl: './side-nav.component.html',
   styleUrls: ['./side-nav.component.scss'],
 })
-export class SideNavComponent implements OnInit {
+export class SideNavComponent {
   plusIcon: IconDefinition = faPlusSquare;
   minusIcon: IconDefinition = faMinusSquare;
   barsIcon: IconDefinition = faBars;
   leftIcon: IconDefinition = faCaretSquareLeft;
   rightIcon: IconDefinition = faCaretSquareRight;
+  powerIcon: IconDefinition = faPowerOff;
 
   smallMenuExpanded = false;
   largeMenuCondensed = false;
@@ -94,9 +96,6 @@ export class SideNavComponent implements OnInit {
       faIcon: faSignOutAlt,
       isMobileOnly: true, }
   ];
-
-  ngOnInit(): void {
-  }
 
   toggleDropdown(i: number): void {
     this.options[i].isExpanded = !this.options[i].isExpanded;

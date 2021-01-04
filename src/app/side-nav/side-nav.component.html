@@ -1,35 +1,56 @@
-<!-- Spectrum Brand Area -->
-<div class="d-flex py-2 pl-2 nav-brand-color text-white justify-content-between-max-sm"
-     [class.justify-content-md-between]="!largeMenuCondensed">
-  <!-- Spectrum with wing -->
-  <h3 class="font-italic font-weight-bold nav-brand-letter m-0">
-    Spectrum<img [class.d-md-none]="largeMenuCondensed"
-                 class="nav-brand-img"
-                 src="assets/logo.png"
-                 alt="Extending horizontal stripes, right wing."/>
-  </h3>
-  <!-- Menu Expand (xs,sm) -->
-  <div class="mr-2 my-auto d-md-none">
-    <span class="border border-white rounded py-1 px-2 cursor-pointer"
-          [class.hamburger-expanded]="smallMenuExpanded"
-          (click)="smallMenuExpanded = !smallMenuExpanded"
-          tabindex="0"
-          role="button"
-          appAriaSelect
-          (ariaSelect)="smallMenuExpanded = !smallMenuExpanded">
-      <fa-icon [icon]="barsIcon"></fa-icon>
-    </span>
+<div class="d-flex">
+  <!-- Spectrum Brand Area -->
+  <div class="d-flex py-2 pl-2 nav-brand-color text-white justify-content-between-max-sm"
+       [class.justify-content-md-between]="!largeMenuCondensed">
+    <!-- Spectrum with wing -->
+    <h3 class="font-italic font-weight-bold nav-brand-letter m-0">
+      Spectrum<img [class.d-md-none]="largeMenuCondensed"
+                   class="nav-brand-img"
+                   src="assets/logo.png"
+                   alt="Extending horizontal stripes, right wing."/>
+    </h3>
+    <!-- Menu Expand (xs,sm) -->
+    <div class="mr-2 my-auto d-md-none">
+      <span class="border border-white rounded py-1 px-2 cursor-pointer"
+            [class.hamburger-expanded]="smallMenuExpanded"
+            (click)="smallMenuExpanded = !smallMenuExpanded"
+            tabindex="0"
+            role="button"
+            appAriaSelect
+            (ariaSelect)="smallMenuExpanded = !smallMenuExpanded">
+        <fa-icon [icon]="barsIcon"></fa-icon>
+      </span>
+    </div>
+    <!-- Menu condense (md+) -->
+    <div class="mx-2 my-auto menu-hidden">
+      <span class="cursor-pointer"
+            (click)="largeMenuCondensed = !largeMenuCondensed"
+            tabindex="0"
+            role="button"
+            appAriaSelect
+            (ariaSelect)="largeMenuCondensed = !largeMenuCondensed">
+        <fa-icon [icon]="largeMenuCondensed ? rightIcon : leftIcon" size="2x" [fixedWidth]="true"></fa-icon>
+      </span>
+    </div>
   </div>
-  <!-- Menu condense (md+) -->
-  <div class="mx-2 my-auto menu-hidden">
-    <span class="cursor-pointer"
-          (click)="largeMenuCondensed = !largeMenuCondensed"
-          tabindex="0"
-          role="button"
-          appAriaSelect
-          (ariaSelect)="largeMenuCondensed = !largeMenuCondensed">
-      <fa-icon [icon]="largeMenuCondensed ? rightIcon : leftIcon" size="2x" [fixedWidth]="true"></fa-icon>
-    </span>
+  <!-- Title Bar Area (md+) -->
+  <div class="d-flex justify-content-between align-items-center flex-fill nav-title-bg text-white">
+    <!-- Administration Title -->
+    <div class="mx-2">
+      Spectrum Communications & Consulting Inc. Administration
+    </div>
+    <!-- Account Short Info -->
+    <div>
+      <span class="d-inline special-icon rounded mx-1">spectrum</span>
+      <span class="mr-2">brookek@spectrum.inc</span>
+      <span class="menu-hidden cursor-pointer mx-2 p-1"
+            aria-label="Log off"
+            title="Log off"
+            tabindex="0"
+            role="button">
+          <fa-icon [icon]="powerIcon"></fa-icon>
+        </span>
+    </div>
   </div>
 </div>
 
