@@ -9,7 +9,7 @@
 @import "src/app/shared/scss/variables.scss";
 
 // Styling
-ul, .card {
+ul, .card, .nav-bg {
   background-color: $nav-item-color;
   border-radius: 0;
 }
@@ -23,8 +23,7 @@ ul, .card {
 }
 
 .nav-brand-img {
-  width: 7rem;
-  height: 1.5rem;
+  width: 5.5rem;
 }
 
 .hamburger-expanded {
@@ -51,6 +50,21 @@ div.nav-link:hover {
 }
 
 // Responsiveness
+.w-275px {
+  @include media-breakpoint-up(md){
+    // 276 px
+    width: 17.25rem;
+    min-width: 17.25rem
+  }
+}
+
+.w-65px {
+  @include media-breakpoint-up(md) {
+    // 64px
+    width: 4rem;
+  }
+}
+
 .menu-hidden {
   @include hide-in-mobile-screen();
 }
@@ -66,9 +80,31 @@ div.nav-link:hover {
   }
 }
 
+.flex-fill-max-sm {
+  @include media-breakpoint-down(sm) {
+    -ms-flex: 1 1 auto !important;
+    flex: 1 1 auto !important;
+  }
+}
+
 // Accessibility
 div[tabindex='0']:focus,
 span[tabindex='0']:focus,
 li[tabindex='0']:focus {
   @include aria-focus();
+}
+
+
+// Nav
+.nav-wrapper {
+  @include media-breakpoint-up(md) {
+    overflow: auto;
+    height: 100%;
+    position: fixed;
+    float: left;
+    margin-bottom: 1rem;
+  }
+  @include media-breakpoint-down(sm) {
+    width: 100%;
+  }
 }

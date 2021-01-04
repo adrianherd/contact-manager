@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, ElementRef, OnInit, Output, ViewChild } from '@angular/core';
+import { Component } from '@angular/core';
 import {
   IconDefinition,
   faCog,
@@ -74,6 +74,7 @@ export class SideNavComponent {
       subOptions: ['Sub NavItem', 'Sub NavItem'] },
     { name: 'Reputation Manager',
       faIcon: faStar,
+      isExpandable: true,
       isExpanded: false,
       subOptions: ['Sub NavItem', 'Sub NavItem'] },
     { name: 'Blog',
