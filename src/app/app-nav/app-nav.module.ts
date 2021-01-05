@@ -2,14 +2,14 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { DirectivesModule } from '../shared/directives/directives.module';
-import { SideNavComponent } from './side-nav.component';
+import { AppNavComponent } from './app-nav.component';
 
 @NgModule({
   declarations: [
-    SideNavComponent,
+    AppNavComponent,
   ],
   exports: [
-    SideNavComponent,
+    AppNavComponent,
   ],
   imports: [
     CommonModule,
@@ -17,4 +17,4 @@ import { SideNavComponent } from './side-nav.component';
     DirectivesModule,
   ],
 })
-export class SideNavModule { }
+export class AppNavModule { }

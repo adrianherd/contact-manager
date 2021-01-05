@@ -25,10 +25,10 @@ import { last } from 'rxjs/operators';
 
 @Component({
   selector: 'side-nav',
-  templateUrl: './side-nav.component.html',
-  styleUrls: ['./side-nav.component.scss'],
+  templateUrl: './app-nav.component.html',
+  styleUrls: ['./app-nav.component.scss'],
 })
-export class SideNavComponent {
+export class AppNavComponent {
   plusIcon: IconDefinition = faPlusSquare;
   minusIcon: IconDefinition = faMinusSquare;
   barsIcon: IconDefinition = faBars;

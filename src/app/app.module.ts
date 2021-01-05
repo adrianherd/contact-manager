@@ -1,8 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
-import { ContentManagerModule } from './content-manager/content-manager.module';
-import { SideNavModule } from './side-nav/side-nav.module';
+import { ContentManagerModule } from './contact-manager/content-manager.module';
+import { AppNavModule } from './app-nav/app-nav.module';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 @NgModule({
@@ -12,7 +12,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
   imports: [
     BrowserModule,
     ContentManagerModule,
-    SideNavModule,
+    AppNavModule,
     FontAwesomeModule
   ],
   providers: [],
