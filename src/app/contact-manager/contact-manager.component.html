@@ -1,11 +1,15 @@
 <div class="d-flex justify-content-between">
   <div class="d-flex align-items-center">
-    <h3 class="mr-4">Contacts</h3>
+    <h3 class="mr-2">Contacts</h3>
     <span>Total Count: 4313</span>
   </div>
   <div>
-    <button class="btn btn-danger mr-2"><fa-icon [icon]="" [fixedWidth]="true"></fa-icon> Remove Test Contacts</button>
-    <button class="btn btn-dark"><fa-icon [icon]="" [fixedWidth]="true"></fa-icon> Help</button>
+    <button class="btn btn-danger mr-2">
+      <fa-icon [icon]="deleteIcon" [fixedWidth]="true"></fa-icon> Remove Test Contacts
+    </button>
+    <button class="btn btn-dark">
+      <fa-icon [icon]="helpIcon" [fixedWidth]="true"></fa-icon> Help
+    </button>
   </div>
 </div>
 
@@ -21,11 +25,19 @@
     <div>
       <button class="btn btn-success">Add Contacts</button>
 
-      <button><<</button>
-      <button><</button>
+      <button class="btn btn-outline-dark">
+        <fa-icon [icon]="firstPageIcon" [fixedWidth]="true" size="lg"></fa-icon>
+      </button>
+      <button class="btn btn-outline-dark">
+        <fa-icon [icon]="prevPageIcon" [fixedWidth]="true" size="lg"></fa-icon>
+      </button>
       <div><input type="text"> of 87</div>
-      <button>></button>
-      <button>>></button>
+      <button class="btn btn-outline-dark">
+        <fa-icon [icon]="nextPageIcon" [fixedWidth]="true" size="lg"></fa-icon>
+      </button>
+      <button class="btn btn-outline-dark">
+        <fa-icon [icon]="lastPageIcon" [fixedWidth]="true" size="lg"></fa-icon>
+      </button>
     </div>
   </div>
 

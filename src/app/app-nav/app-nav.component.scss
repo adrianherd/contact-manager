@@ -1,12 +1,12 @@
 // Necessary bootstrap files
-@import "node_modules/bootstrap/scss/functions";
-@import "node_modules/bootstrap/scss/variables";
-@import "node_modules/bootstrap/scss/mixins/_breakpoints";
+@import "~bootstrap/scss/functions";
+@import "~bootstrap/scss/variables";
+@import "~bootstrap/scss/mixins/_breakpoints";
 
 // Shared custom scss
-@import "src/app/shared/scss/aria.scss";
-@import "src/app/shared/scss/mobile-mixins.scss";
-@import "src/app/shared/scss/variables.scss";
+@import "~src/app/shared/scss/aria";
+@import "~src/app/shared/scss/mobile-mixins";
+@import "~src/app/shared/scss/variables";
 
 // Styling
 ul, .card, .nav-bg {
