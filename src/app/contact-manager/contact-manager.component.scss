@@ -7,6 +7,11 @@
 @import "~src/app/shared/scss/aria";
 @import "~src/app/shared/scss/mobile-mixins";
 @import "~src/app/shared/scss/variables";
+
 .w-15 {
   width: 25%;
+}
+
+.table {
+  table-layout: fixed;
 }
