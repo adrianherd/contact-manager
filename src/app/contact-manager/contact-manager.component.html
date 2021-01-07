@@ -14,28 +14,38 @@
 </div>
 
 <div class="card">
-  <div>
-    <div class="input-group">
-      <input type="text" class="form-control" placeholder="" aria-label="">
-      <div class="input-group-append">
-        <button class="btn btn-outline-secondary" type="button">Search</button>
+  <div class="d-flex justify-content-between my-2 mx-1">
+    <div class="d-flex flex-nowrap mr-1">
+      <div class="input-group">
+        <input type="text" class="form-control" placeholder="" aria-label="">
+        <div class="input-group-append">
+          <button class="btn btn-outline-secondary" type="button">Search</button>
+        </div>
       </div>
     </div>
-
-    <div>
-      <button class="btn btn-success">Add Contacts</button>
-
-      <button class="btn btn-outline-dark">
+    <div class="d-flex flex-nowrap justify-content-end">
+      <button class="btn btn-success mr-1 text-nowrap">
+        <fa-icon [icon]="addIcon" [fixedWidth]="true"></fa-icon>
+        Add Contacts
+      </button>
+      <button class="btn btn-dark mr-1">
         <fa-icon [icon]="firstPageIcon" [fixedWidth]="true" size="lg"></fa-icon>
       </button>
-      <button class="btn btn-outline-dark">
+      <button class="btn btn-dark mr-1">
         <fa-icon [icon]="prevPageIcon" [fixedWidth]="true" size="lg"></fa-icon>
       </button>
-      <div><input type="text"> of 87</div>
-      <button class="btn btn-outline-dark">
+      <div class="form-inline w-15 mr-1">
+        <div class="input-group">
+          <input type="text" class="form-control" placeholder="" aria-label="" aria-describedby="">
+          <div class="input-group-append">
+            <span class="input-group-text" id="">of 87</span>
+          </div>
+        </div>
+      </div>
+      <button class="btn btn-dark mr-1">
         <fa-icon [icon]="nextPageIcon" [fixedWidth]="true" size="lg"></fa-icon>
       </button>
-      <button class="btn btn-outline-dark">
+      <button class="btn btn-dark mr-1">
         <fa-icon [icon]="lastPageIcon" [fixedWidth]="true" size="lg"></fa-icon>
       </button>
     </div>
