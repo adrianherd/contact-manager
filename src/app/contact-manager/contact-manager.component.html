@@ -13,7 +13,7 @@
   </div>
 </div>
 
-<div class="card">
+<div class="card overflow-auto">
   <div class="d-flex justify-content-md-between flex-column-max-sm justify-content-center my-2 mx-1">
     <div class="d-flex flex-nowrap mr-1 d-md-none">
       <div class="input-group">
@@ -55,17 +55,26 @@
     </div>
   </div>
 
-  <table class="table table-striped w-100">
-    <caption>Contact</caption>
+  <div class="table-responsive">
+  <table class="table table-striped w-100 mb-0 mw-md-1100px">
+    <caption class="d-none-max-sm">Contact Information with Actions</caption>
     <colgroup span="8" class="d-none-mx-sm">
-      <col style="width: 12.5%;">
-      <col style="width: 12.5%;">
-      <col style="width: 12.5%;">
-      <col style="width: 12.5%;">
-      <col style="width: 12.5%;">
-      <col style="width: 12.5%;">
-      <col style="width: 12.5%;">
-      <col style="width: 12.5%;">
+      <!-- Select -->
+      <col style="width: 6%;">
+      <!-- Initial -->
+      <col style="width: 13%;">
+      <!-- Date -->
+      <col style="width: 10%;">
+      <!-- Name -->
+      <col style="width: 15%;">
+      <!-- Email -->
+      <col style="width: 15%;">
+      <!-- Phone -->
+      <col style="width: 13%;">
+      <!-- Source -->
+      <col style="width: 18%;">
+      <!-- Actions -->
+      <col style="width: 10%;">
     </colgroup>
     <thead class="d-none-mx-sm">
       <tr>
@@ -117,7 +126,9 @@
     </thead>
     <tbody>
       <tr>
-        <td class="text-center"><app-custom-checkbox></app-custom-checkbox></td>
+        <td class="text-center">
+          <app-custom-checkbox></app-custom-checkbox>
+        </td>
         <td>
           <span class="d-none-mn-md font-weight-bold w-25">Initial</span>
           Quote
@@ -174,6 +185,7 @@
       </tr>
     </tbody>
   </table>
+  </div>
 </div>
 
 

@@ -1,11 +1,10 @@
-import { Component, ElementRef, Renderer2, ViewChild } from '@angular/core';
+import { Component, ElementRef, ViewChild } from '@angular/core';
 import {
   IconDefinition,
   faCog,
   faHandHoldingUsd,
   faBook,
   faSearchPlus,
-  faUser,
   faAddressBook,
   faStar,
   faBlog,
@@ -22,10 +21,9 @@ import {
   faSignOutAlt,
   faPowerOff,
 } from '@fortawesome/free-solid-svg-icons';
-import { last } from 'rxjs/operators';
 
 @Component({
-  selector: 'side-nav',
+  selector: 'app-nav',
   templateUrl: './app-nav.component.html',
   styleUrls: ['./app-nav.component.scss'],
 })

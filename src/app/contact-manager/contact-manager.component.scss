@@ -12,6 +12,11 @@
   width: 25%;
 }
 
+.mw-md-1100px{
+  @include media-breakpoint-up(md) {
+    min-width: 1100px;
+  }
+}
 .table {
   table-layout: fixed;
 }
