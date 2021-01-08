@@ -142,3 +142,7 @@ li[tabindex='0']:focus {
   @include aria-focus();
 }
 
+.custom-overflow {
+  overflow-x: hidden !important;
+  overflow-y: auto !important;
+}
