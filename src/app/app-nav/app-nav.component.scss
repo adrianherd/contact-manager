@@ -65,15 +65,15 @@ div.nav-link:hover {
   }
 }
 
-.m-275px {
+.p-275px {
   @include media-breakpoint-up(md) {
-    margin-left: $nav-side-width;
+    padding-left: $nav-side-width;
   }
 }
 
-.m-65px {
+.p-65px {
   @include media-breakpoint-up(md) {
-    margin-left: $nav-side-width-sm;
+    padding-left: $nav-side-width-sm;
   }
 }
 
