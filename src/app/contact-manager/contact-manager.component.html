@@ -56,6 +56,7 @@
   </div>
 
   <table class="table table-striped w-100">
+    <caption>Contact</caption>
     <colgroup span="8" class="d-none-mx-sm">
       <col style="width: 12.5%;">
       <col style="width: 12.5%;">
@@ -105,17 +106,17 @@
         <th scope="col" class="align-middle text-center">
           <app-custom-checkbox></app-custom-checkbox>
         </th>
-        <th scope="col"><input class="form-control" type="text"></th>
-        <th scope="col"><input class="form-control" type="text"></th>
-        <th scope="col"><input class="form-control" type="text"></th>
-        <th scope="col"><input class="form-control" type="text"></th>
-        <th scope="col"><input class="form-control" type="text"></th>
-        <th scope="col"><input class="form-control" type="text"></th>
+        <th scope="col"><input class="form-control" type="text" aria-label="Initial Filter"></th>
+        <th scope="col"><input class="form-control" type="text" aria-label="Date Filter"></th>
+        <th scope="col"><input class="form-control" type="text" aria-label="Name Filter"></th>
+        <th scope="col"><input class="form-control" type="text" aria-label="Email Filter"></th>
+        <th scope="col"><input class="form-control" type="text" aria-label="Phone Filter"></th>
+        <th scope="col"><input class="form-control" type="text" aria-label="Source Filter"></th>
         <th scope="col"><span class="sr-only">No Filters are available for Actions</span></th>
       </tr>
     </thead>
     <tbody>
-      <tr scope="row">
+      <tr>
         <td class="text-center"><app-custom-checkbox></app-custom-checkbox></td>
         <td>
           <span class="d-none-mn-md font-weight-bold w-25">Initial</span>
@@ -127,11 +128,11 @@
         </td>
         <td>
           <span class="d-none-mn-md font-weight-bold w-25">Name</span>
-          Todd Shea
+          Help Well
         </td>
         <td>
           <span class="d-none-mn-md font-weight-bold w-25">Email</span>
-          tshea@apple.com
+          help@apple.com
         </td>
         <td>
           <span class="d-none-mn-md font-weight-bold w-25">Phone</span>
@@ -142,9 +143,54 @@
           Organic: google.com
         </td>
         <td class="align-middle text-center">
-          Actions
+          <div ngbDropdown container="body">
+            <button class="btn btn-dark btn-sm" ngbDropdownToggle>Actions</button>
+            <div ngbDropdownMenu>
+              <button ngbDropdownItem>
+                <fa-icon [icon]="surveyIcon" [fixedWidth]="true"></fa-icon> Survey
+              </button>
+              <button ngbDropdownItem>
+                <fa-icon [icon]="reviewIcon" [fixedWidth]="true"></fa-icon> Review
+              </button>
+              <button ngbDropdownItem>
+                <fa-icon [icon]="emailIcon" [fixedWidth]="true"></fa-icon> Email
+              </button>
+              <button ngbDropdownItem>
+                <fa-icon [icon]="appointmentIcon" [fixedWidth]="true"></fa-icon> Appointment
+              </button>
+              <button ngbDropdownItem>
+                <fa-icon [icon]="replyIcon" [fixedWidth]="true"></fa-icon> Reply
+              </button>
+              <button ngbDropdownItem>
+                <fa-icon [icon]="noteIcon" [fixedWidth]="true"></fa-icon> Notes
+              </button>
+              <div class="dropdown-divider"></div>
+              <button ngbDropdownItem (click)="open(contentModal)">
+                <fa-icon [icon]="viewIcon" [fixedWidth]="true"></fa-icon> View
+              </button>
+            </div>
+          </div>
         </td>
       </tr>
     </tbody>
   </table>
 </div>
+
+
+<ng-template #contentModal let-modal let-contactRow>
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">Contact</h4>
+    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <!-- None truncated Information -->
+    <div><div class="w-25">Initial:</div>Quote</div>
+    <div><div class="w-25">Date:</div>12/25/2020</div>
+    <div><div class="w-25">Name:</div>Help Well</div>
+    <div><div class="w-25">Email:</div>help@apple.com</div>
+    <div><div class="w-25">Phone:</div>(512) 444-8888</div>
+    <div><div class="w-25">Source:</div>(Organic) google.com</div>
+  </div>
+</ng-template>

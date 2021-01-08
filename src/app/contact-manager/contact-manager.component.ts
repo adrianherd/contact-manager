@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Icon } from '@fortawesome/fontawesome-svg-core';
 import {
   IconDefinition,
   faTrash,
@@ -18,7 +17,9 @@ import {
   faQuestionCircle,
   faClipboardList,
   faStickyNote,
+  faEye,
 } from '@fortawesome/free-solid-svg-icons';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'content-manager',
@@ -44,14 +45,18 @@ export class ContactManagerComponent implements OnInit {
   appointmentIcon: IconDefinition = faCalendarPlus;
   replyIcon: IconDefinition = faReply;
   noteIcon: IconDefinition = faStickyNote;
+  viewIcon: IconDefinition = faEye;
 
   // Lead
   quoteIcon: IconDefinition = faQuoteRight;
   callIcon: IconDefinition = faPhoneAlt;
   estimateIcon: IconDefinition = faTag;
 
-  constructor() { }
+  constructor(private modalService: NgbModal) {}
 
+  open(content): void {
+    this.modalService.open(content, {ariaLabelledBy: 'modal-basic-title'});
+  }
   ngOnInit(): void {
   }
 
