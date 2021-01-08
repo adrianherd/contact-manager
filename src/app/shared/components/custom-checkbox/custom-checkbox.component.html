@@ -1,0 +1,11 @@
+<div class="w-100 text-center"
+     (click)="toggle()"
+     tabindex="0"
+     appAriaSelect
+     role="checkbox"
+     [attr.aria-checked]="checked">
+  <fa-icon [icon]="checked ? checkedIcon : uncheckedIcon"
+           [fixedWidth]="true"
+           size="lg">
+  </fa-icon>
+</div>

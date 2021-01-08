@@ -37,11 +37,13 @@ export class ContactManagerComponent implements OnInit {
   addIcon: IconDefinition = faPlus;
   deleteIcon: IconDefinition = faTrash;
   helpIcon: IconDefinition = faQuestionCircle;
+
   // Table navigation
   firstPageIcon: IconDefinition = faAngleDoubleLeft;
   prevPageIcon: IconDefinition = faAngleLeft;
   nextPageIcon: IconDefinition = faAngleRight;
   lastPageIcon: IconDefinition = faAngleDoubleRight;
+
   // Contact Actions
   surveyIcon: IconDefinition = faClipboardList;
   reviewIcon: IconDefinition = faStar;
@@ -49,17 +51,16 @@ export class ContactManagerComponent implements OnInit {
   appointmentIcon: IconDefinition = faCalendarPlus;
   replyIcon: IconDefinition = faReply;
   noteIcon: IconDefinition = faStickyNote;
+
   // Lead
   quoteIcon: IconDefinition = faQuoteRight;
   callIcon: IconDefinition = faPhoneAlt;
   estimateIcon: IconDefinition = faTag;
+
   // Sort
   sortNeutral: IconDefinition = faSort;
   sortAsc: IconDefinition = faSortUp;
   sortDesc: IconDefinition = faSortDown;
-  // Select
-  uncheckedIcon: IconDefinition = faSquare;
-  checkedIcon: IconDefinition = faCheckSquare;
 
   constructor() { }
 

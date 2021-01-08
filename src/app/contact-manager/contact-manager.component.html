@@ -53,47 +53,49 @@
 
   <table class="table table-striped w-100">
     <colgroup span="8">
+      <col style="width: 6%;">
       <col style="width: 12.5%;">
       <col style="width: 12.5%;">
       <col style="width: 12.5%;">
       <col style="width: 12.5%;">
       <col style="width: 12.5%;">
       <col style="width: 12.5%;">
-      <col style="width: 12.5%;">
-      <col style="width: 12.5%;">
+      <col style="width: 6%;">
     </colgroup>
     <thead>
       <tr>
-        <th scope="col"></th>
+        <th scope="col"><span class="sr-only">Select All</span></th>
         <th scope="col">Initial</th>
         <th scope="col">Date</th>
         <th scope="col">Name</th>
         <th scope="col">Email</th>
         <th scope="col">Phone</th>
         <th scope="col">Source</th>
-        <th scope="col"></th>
+        <th scope="col"><span class="sr-only">Actions</span></th>
       </tr>
       <tr>
-        <th scope="col"><button class="btn"><fa-icon [icon]="uncheckedIcon" size="lg"></fa-icon></button></th>
+        <th scope="col">
+          <app-custom-checkbox></app-custom-checkbox>
+        </th>
         <th scope="col"><input class="form-control" type="text"></th>
         <th scope="col"><input class="form-control" type="text"></th>
         <th scope="col"><input class="form-control" type="text"></th>
         <th scope="col"><input class="form-control" type="text"></th>
         <th scope="col"><input class="form-control" type="text"></th>
         <th scope="col"><input class="form-control" type="text"></th>
-        <th scope="col"></th>
+        <th scope="col"><span class="sr-only">No Filters are available for Actions</span></th>
       </tr>
     </thead>
     <tbody>
-      <tr>
-        <th scope="row"><button class="btn"><fa-icon [icon]="uncheckedIcon" size="lg"></fa-icon></button></th>
+      <tr scope="row">
+        <td><app-custom-checkbox></app-custom-checkbox></td>
         <td>Quote</td>
         <td>12/15/2020</td>
         <td>Todd Shea</td>
         <td>tshea@apple.com</td>
-        <td>5128884444</td>
+        <td>(512) 888-4444</td>
         <td>Organic: google.com </td>
-        <td></td>
+        <td>Actions</td>
       </tr>
     </tbody>
   </table>

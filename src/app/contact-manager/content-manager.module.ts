@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { ComponentsModule } from '../shared/components/components.module';
+import { DirectivesModule } from '../shared/directives/directives.module';
 import { ContactManagerComponent } from './contact-manager.component';
 
 @NgModule({
@@ -10,10 +12,12 @@ import { ContactManagerComponent } from './contact-manager.component';
   exports: [
     ContactManagerComponent,
   ],
-    imports: [
-        CommonModule,
-        FontAwesomeModule,
-    ],
+  imports: [
+    CommonModule,
+    FontAwesomeModule,
+    DirectivesModule,
+    ComponentsModule,
+  ],
 })
 export class ContentManagerModule {
 }
