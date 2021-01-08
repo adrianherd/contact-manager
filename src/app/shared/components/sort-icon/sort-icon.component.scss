@@ -1,0 +1,6 @@
+// Shared custom scss
+@import "~src/app/shared/scss/aria";
+
+.custom-focus:focus {
+  @include aria-focus(0px);
+}

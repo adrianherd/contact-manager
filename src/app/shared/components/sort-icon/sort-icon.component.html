@@ -1,0 +1,10 @@
+<span class="custom-focus"
+      (click)="toggle()"
+      tabindex="0"
+      appAriaSelect
+      (ariaSelect)="toggle()">
+  <fa-icon *ngIf="sortState === 'none'" [icon]="sortNeutral" [fixedWidth]="true"></fa-icon>
+  <fa-icon *ngIf="sortState === 'ascending'" [icon]="sortAsc" [fixedWidth]="true"></fa-icon>
+  <fa-icon *ngIf="sortState === 'descending'" [icon]="sortDesc" [fixedWidth]="true"></fa-icon>
+</span>
+

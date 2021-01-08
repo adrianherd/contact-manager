@@ -18,14 +18,7 @@ import {
   faQuestionCircle,
   faClipboardList,
   faStickyNote,
-  faSort,
-  faSortUp,
-  faSortDown,
-  faCheckSquare,
 } from '@fortawesome/free-solid-svg-icons';
-import {
-  faSquare
-} from '@fortawesome/free-regular-svg-icons';
 
 @Component({
   selector: 'content-manager',
@@ -56,11 +49,6 @@ export class ContactManagerComponent implements OnInit {
   quoteIcon: IconDefinition = faQuoteRight;
   callIcon: IconDefinition = faPhoneAlt;
   estimateIcon: IconDefinition = faTag;
-
-  // Sort
-  sortNeutral: IconDefinition = faSort;
-  sortAsc: IconDefinition = faSortUp;
-  sortDesc: IconDefinition = faSortDown;
 
   constructor() { }
 

@@ -9,3 +9,6 @@ html, body {
 .app-bg {
   background-color: $app-color;
 }
+
+/* Importing Bootstrap SCSS file. */
+@import '~bootstrap/scss/bootstrap';

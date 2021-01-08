@@ -16,7 +16,9 @@
   table-layout: fixed;
 }
 
-td {
+tr td {
+  white-space: nowrap;
+  overflow: hidden;
   text-overflow: ellipsis;
 }
 
@@ -48,6 +50,8 @@ td {
   tr td {
     display: block;
     width: 100%;
+    white-space: unset;
+    overflow: unset;
     text-overflow: unset;
 
     span {
