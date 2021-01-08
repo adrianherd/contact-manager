@@ -1,6 +1,6 @@
-@mixin aria-focus {
+@mixin aria-focus($offset: -4px) {
   outline: orange solid 4px;
-  outline-offset: -4px;
+  outline-offset: $offset;
 }
 
 .cursor-pointer{

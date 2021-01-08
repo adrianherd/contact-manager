@@ -15,3 +15,43 @@
 .table {
   table-layout: fixed;
 }
+
+td {
+  text-overflow: ellipsis;
+}
+
+@include media-breakpoint-up(md) {
+  .d-none-mn-md {
+    display: none;
+  }
+}
+
+@include media-breakpoint-down(sm) {
+  .d-none-mx-sm {
+    display: none;
+  }
+
+  .flex-column-max-sm {
+    -ms-flex-direction: column !important;
+    flex-direction: column !important;
+  }
+
+  .justify-content-center-mx-sm {
+    -ms-flex-pack: center !important;
+    justify-content: center !important;
+  }
+
+  th {
+    display: none;
+  }
+
+  tr td {
+    display: block;
+    width: 100%;
+    text-overflow: unset;
+
+    span {
+      display: inline-block;
+    }
+  }
+}

@@ -1,0 +1,8 @@
+// Shared custom scss
+@import "~src/app/shared/scss/aria";
+@import "~src/app/shared/scss/mobile-mixins";
+@import "~src/app/shared/scss/variables";
+
+.custom-checkbox:focus {
+  @include aria-focus(0);
+}

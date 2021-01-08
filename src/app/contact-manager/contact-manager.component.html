@@ -1,9 +1,9 @@
-<div class="d-flex justify-content-between">
-  <div class="d-flex align-items-center">
+<div class="d-flex justify-content-between flex-column-max-sm mx-1 mx-md-0">
+  <div class="d-flex align-items-center justify-content-between justify-content-md-start">
     <h3 class="mr-2">Contacts</h3>
     <span>Total Count: 4313</span>
   </div>
-  <div>
+  <div class="d-flex justify-content-between justify-content-md-end my-2">
     <button class="btn btn-danger mr-2">
       <fa-icon [icon]="deleteIcon" [fixedWidth]="true"></fa-icon> Remove Test Contacts
     </button>
@@ -14,8 +14,8 @@
 </div>
 
 <div class="card">
-  <div class="d-flex justify-content-between my-2 mx-1">
-    <div class="d-flex flex-nowrap mr-1">
+  <div class="d-flex justify-content-md-between flex-column-max-sm justify-content-center my-2 mx-1">
+    <div class="d-flex flex-nowrap mr-1 d-md-none">
       <div class="input-group">
         <input type="text" class="form-control" placeholder="" aria-label="">
         <div class="input-group-append">
@@ -23,36 +23,40 @@
         </div>
       </div>
     </div>
-    <div class="d-flex flex-nowrap justify-content-end">
-      <button class="btn btn-success mr-1 text-nowrap">
-        <fa-icon [icon]="addIcon" [fixedWidth]="true"></fa-icon>
-        Add Contacts
-      </button>
-      <button class="btn btn-dark mr-1">
-        <fa-icon [icon]="firstPageIcon" [fixedWidth]="true" size="lg"></fa-icon>
-      </button>
-      <button class="btn btn-dark mr-1">
-        <fa-icon [icon]="prevPageIcon" [fixedWidth]="true" size="lg"></fa-icon>
-      </button>
-      <div class="form-inline w-15 mr-1">
-        <div class="input-group">
-          <input type="text" class="form-control" placeholder="" aria-label="" aria-describedby="">
-          <div class="input-group-append">
-            <span class="input-group-text" id="">of 87</span>
+    <div class="my-2 my-md-0 d-flex flex-column-max-sm flex-fill justify-content-between">
+      <div class="d-flex flex-nowrap justify-content-md-end justify-content-center">
+        <button class="btn btn-success mr-1 text-nowrap">
+          <fa-icon [icon]="addIcon" [fixedWidth]="true"></fa-icon>
+          Add Contacts
+        </button>
+      </div>
+      <div class="d-flex flex-nowrap justify-content-md-end justify-content-center my-2 my-md-0">
+        <button class="btn btn-dark mr-1">
+          <fa-icon [icon]="firstPageIcon" [fixedWidth]="true" size="lg"></fa-icon>
+        </button>
+        <button class="btn btn-dark mr-1">
+          <fa-icon [icon]="prevPageIcon" [fixedWidth]="true" size="lg"></fa-icon>
+        </button>
+        <div class="form-inline w-15 mr-1">
+          <div class="input-group flex-nowrap">
+            <input type="text" class="form-control" placeholder="" aria-label="" aria-describedby="">
+            <div class="input-group-append">
+              <span class="input-group-text" id="">/87</span>
+            </div>
           </div>
         </div>
+        <button class="btn btn-dark mr-1">
+          <fa-icon [icon]="nextPageIcon" [fixedWidth]="true" size="lg"></fa-icon>
+        </button>
+        <button class="btn btn-dark mr-1">
+          <fa-icon [icon]="lastPageIcon" [fixedWidth]="true" size="lg"></fa-icon>
+        </button>
       </div>
-      <button class="btn btn-dark mr-1">
-        <fa-icon [icon]="nextPageIcon" [fixedWidth]="true" size="lg"></fa-icon>
-      </button>
-      <button class="btn btn-dark mr-1">
-        <fa-icon [icon]="lastPageIcon" [fixedWidth]="true" size="lg"></fa-icon>
-      </button>
     </div>
   </div>
 
   <table class="table table-striped w-100">
-    <colgroup span="8">
+    <colgroup span="8" class="d-none-mx-sm">
       <col style="width: 6%;">
       <col style="width: 12.5%;">
       <col style="width: 12.5%;">
@@ -62,7 +66,7 @@
       <col style="width: 12.5%;">
       <col style="width: 6%;">
     </colgroup>
-    <thead>
+    <thead class="d-none-mx-sm">
       <tr>
         <th scope="col"><span class="sr-only">Select All</span></th>
         <th scope="col">Initial</th>
@@ -74,7 +78,7 @@
         <th scope="col"><span class="sr-only">Actions</span></th>
       </tr>
       <tr>
-        <th scope="col">
+        <th scope="col" class="align-middle text-center">
           <app-custom-checkbox></app-custom-checkbox>
         </th>
         <th scope="col"><input class="form-control" type="text"></th>
@@ -88,14 +92,34 @@
     </thead>
     <tbody>
       <tr scope="row">
-        <td><app-custom-checkbox></app-custom-checkbox></td>
-        <td>Quote</td>
-        <td>12/15/2020</td>
-        <td>Todd Shea</td>
-        <td>tshea@apple.com</td>
-        <td>(512) 888-4444</td>
-        <td>Organic: google.com </td>
-        <td>Actions</td>
+        <td class="text-center"><app-custom-checkbox></app-custom-checkbox></td>
+        <td>
+          <span class="d-none-mn-md font-weight-bold w-25">Initial</span>
+          Quote
+        </td>
+        <td>
+          <span class="d-none-mn-md font-weight-bold w-25">Date</span>
+          12/15/2020
+        </td>
+        <td>
+          <span class="d-none-mn-md font-weight-bold w-25">Name</span>
+          Todd Shea
+        </td>
+        <td>
+          <span class="d-none-mn-md font-weight-bold w-25">Email</span>
+          tshea@apple.com
+        </td>
+        <td>
+          <span class="d-none-mn-md font-weight-bold w-25">Phone</span>
+          (512) 888-4444
+        </td>
+        <td>
+          <span class="d-none-mn-md font-weight-bold w-25">Source</span>
+          Organic: google.com
+        </td>
+        <td class="align-middle text-center">
+          Actions
+        </td>
       </tr>
     </tbody>
   </table>
